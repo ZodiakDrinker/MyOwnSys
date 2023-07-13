@@ -1,10 +1,10 @@
 #!/bin/sh
 
-ip_address=
-machine_name=
+ip_address=$(/bin/cat ~/.config/bin/target | awk '{print $1}')
+machine_name=$(/bin/cat ~/.config/bin/target | awk '{print $2}')
 
-if [  ] && [  ]; then
-    echo "%{F#e51d0b}󰓾 %{F#ffffff}%{u-} - "
+if [ $ip_address ] && [ $machine_name ]; then
+    echo "%{F#e51d0b}󰓾 %{F#ffffff}$ip_address%{u-} - $machine_name"
 else
     echo "%{F#e51d0b}󰓾 %{u-}%{F#ffffff} No target"
 fi
